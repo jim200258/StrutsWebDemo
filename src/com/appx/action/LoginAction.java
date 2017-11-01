@@ -13,24 +13,18 @@ import org.apache.struts.action.ActionMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.appx.form.UserForm;
-import com.appx.service.UserService;
-
 
 public class LoginAction extends Action{
-	
-	private UserService userService = new UserService();
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
-		String username = request.getParameter("user");
-		request.setAttribute("userInfo", ((UserForm)form).getUsername());		
-        if(userService.Check((UserForm)form)){
-        	request.setAttribute("message", "Hi~~" + ((UserForm)form).getUsername());
-        	return mapping.findForward("helloUser");
+        if( ((UserForm) form).getUsername().equals("test") && ((UserForm) form).getPassword().equals("test")  ){
+    	    request.setAttribute("message", "Hi~~" + ((UserForm)form).getUsername());
+    	    return mapping.findForward("helloUser");
         }else{
-        	request.setAttribute("message", "帳號或密碼錯誤請重新輸入！！！");
-        	return mapping.findForward("loginUser");
+    	    request.setAttribute("message", "帳號或密碼錯誤請重新輸入！！！");
+    	    return mapping.findForward("loginUser");        	
         }
 		
 	}

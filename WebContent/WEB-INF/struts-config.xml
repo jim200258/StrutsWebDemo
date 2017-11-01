@@ -72,11 +72,6 @@
 			<forward name="helloUser" path="/pages/Hello.jsp" />
 		</action>
 
-		<action path="/SaveUser" type="com.appx.action.SaveUserAction"
-			name="userForm">
-			<forward name="helloUser" path="/pages/Hello.jsp" />
-			<forward name="loginUser" path="/pages/LoginForm.jsp" />
-		</action>
 
 		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
 			parameter="/pages/Input.jsp"/> <action path="/InputSubmit" type="app.InputAction" 

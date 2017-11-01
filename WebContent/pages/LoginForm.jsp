@@ -16,6 +16,5 @@
 		<p>
 			<input type="submit" />
 	</form>
-	<a href="/StructWebDemo/pages/AddUser.html">新增使用者</a>
 </body>
 </html>
